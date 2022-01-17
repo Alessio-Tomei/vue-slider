@@ -66,24 +66,26 @@ var app = new Vue({
             this.position = index;
         },
         autoPlay: function() {
-            // let self = this; Perchè non usare app. ????
+            // Perchè non usare app.next ???? Non fai riferimeto al nome, 
+            // in molti usano self oppure una funzione freccia
+            let self = this; 
             this.interval = setInterval(function () {
                 console.log('clock');
-                app.next();
+                self.next();
             }, 3000);
         },
         stopAutoPlay: function() {
             clearInterval(this.interval);
-            console.log('hover');
+            console.log('hover, stop clock!');
         }
     }, 
-    created: function() {
+    // usare mounted invece di created, vedere hooks di vue!
+    mounted: function() {
         this.autoPlay();
     } 
 });
 
-
-// app.autoPlay() Perchè non fare così????
+// app.autoPlay() Perchè non fare così???? meno "elegante"
 
 /*
 

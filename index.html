@@ -13,7 +13,7 @@
     <div id="app">
         <main>
             <section>
-                <div class="container">
+                <div class="container" @mouseover="stopAutoPlay" @mouseleave="autoPlay">
                     <div class="row g-0">
                         <div class="col-10">
                             <div class="ms_img-container">
@@ -29,7 +29,7 @@
                             </div>
                         </div>
                         <div class="col-2">
-                            <div class="ms_img-selector" @mouseover="stopAutoPlay" @mouseleave="autoPlay">
+                            <div class="ms_img-selector">
                                 <!-- contenuto js-->
                                 <div class="ms_previous-button" @click="previous">
                                     <i class="fas fa-chevron-up"></i>
